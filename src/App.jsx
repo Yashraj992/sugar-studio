@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
@@ -36,7 +36,7 @@ function App() {
   }, [window.location.pathname]);
 
   return (
-    <Router>
+    <HashRouter>
       <div className="flex flex-col min-h-screen">
         {isLoading && <Loading />}
         {isPageTransitioning && <Loading />}
@@ -54,7 +54,7 @@ function App() {
         </main>
         <Footer />
       </div>
-    </Router>
+    </HashRouter>
   );
 }
 
